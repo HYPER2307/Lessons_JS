@@ -1,22 +1,41 @@
 'use strict';
 
-let num = 50;
+let numberOfFilms = +prompt("Скільки фільмів вже подивились", "");
 
-// while (num <= 55) {
-//     console.log(num);
-//     num++;
-// }
-
-// do {
-//     console.log(num);
-//     num++;
-// }
-// while (num <= 55);
-
-for (let i = 1; i < 10; i++) {
-    if(i === 6) {
-        // break;
-        continue;
-    }
-    console.log(i);
+if(numberOfFilms == 0 && numberOfFilms == null) {
+    alert("Ви мусите надати відповідь для продовження");
+    numberOfFilms = +prompt("Скільки фільмів вже подивились", "");
+} else if (numberOfFilms <= 10) {
+    alert("Проглянуто доволі мало фільмів :(");
+} else if (numberOfFilms >= 10 && numberOfFilms <= 30) {
+    alert("Ви класичний глядач :)");
+} else if (numberOfFilms > 50){
+    alert("Ви кіноман :)");
 }
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {
+    },
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+
+
+for (let i = 0; i <= 1; i++) {
+    const a = prompt("Фільми які ви подивились ?", ""),
+    b = +prompt("Оцінка фільму ?", "");
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+    } else {
+        i--;
+    }
+    
+
+    
+}
+
+
+console.log(personalMovieDB); 
