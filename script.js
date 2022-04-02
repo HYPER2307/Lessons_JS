@@ -1,42 +1,31 @@
 'use strict';
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() {
-        console.log('test')
-    }
-};
+const arr = [1, 9, 13, 2, 7];
+arr.sort(compareNum);
+console.log(arr);
 
-options.makeTest();
+function compareNum(a, b) {
+    return a - b;
+}
 
-const {border, bg} = options.colors;
-console.log(border); 
+// arr.forEach(function (item, i, arr) {
+//     console.log(`${i}: ${item} всредині маисву ${arr}`);
+// });
 
-// console.log(Object.keys(options).length);
+// arr.pop();
+// arr.push(12);
 
+// console.log(arr);
 
-// delete options.name;
-
-// console.log(options);
-
-// let counter = 0;
-// for (let key in options) {
-//     if (typeof(options[key]) === 'object') {
-//         for (let i in options[key]) {
-//             console.log(`Властивість ${i} має значення ${options[key][i]}`);
-//             counter++;
-//         }
-//     } else {
-//         console.log(`Властивість ${key} має значення ${options[key]}`);
-//         counter++;
-//     }
-    
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
 // }
 
-// console.log(counter);
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+// const str = prompt('', '');
+// const products = str.split(', ');
+// products.sort();
+// console.log(products.join('; '));
