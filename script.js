@@ -1,41 +1,42 @@
 'use strict';
 
-let numberOfFilms = +prompt("Скільки фільмів вже подивились", "");
+let num = 20;
 
-if(numberOfFilms == 0 && numberOfFilms == null) {
-    alert("Ви мусите надати відповідь для продовження");
-    numberOfFilms = +prompt("Скільки фільмів вже подивились", "");
-} else if (numberOfFilms <= 10) {
-    alert("Проглянуто доволі мало фільмів :(");
-} else if (numberOfFilms >= 10 && numberOfFilms <= 30) {
-    alert("Ви класичний глядач :)");
-} else if (numberOfFilms > 50){
-    alert("Ви кіноман :)");
+function showFirstMessage(text) {
+    console.log(text);
+    num = 10;
 }
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {
-    },
-    actors: {},
-    genres: [],
-    privat: false
+showFirstMessage('Hello');
+console.log(num);
+
+// function calc (a, b) {
+//     return (a + b);
+// }
+
+// console.log(calc(2, 6));
+// console.log(calc(5, 6));
+// console.log(calc(10, 6));
+
+
+function ret() {
+    let num = 50;
+    return (num);
+}
+
+const anotherNum = ret();
+
+console.log(anotherNum);
+
+const logger = function() {
+    console.log("hello");
 };
 
+logger();
 
+const calc = (a, b) => {
+    console.log("1");
+    return a + b;
+};
 
-for (let i = 0; i <= 1; i++) {
-    const a = prompt("Фільми які ви подивились ?", ""),
-    b = +prompt("Оцінка фільму ?", "");
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-    } else {
-        i--;
-    }
-    
-
-    
-}
-
-
-console.log(personalMovieDB); 
+calc(1, 5);
