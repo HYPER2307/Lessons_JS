@@ -1,25 +1,71 @@
 'use strict';
 
-const str = 'teSt';
+let numberOfFilms;
 
 
-// console.log(str.toUpperCase());
-console.log(str.toLowerCase());
-console.log(str);
 
-const fruit = 'Some fruit';
+function start() {
+    numberOfFilms = +prompt("Скільки фільмів вже подивились", "");
 
-console.log(fruit.indexOf("q"));
+    while (numberOfFilms == "" || numberOfFilms == 0 || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt("Скільки фільмів вже подивились", "");
+    }
+}
 
-const logg = 'Hello world!';
+start();
 
-// console.log(logg.slice(-6, -1));
 
-// console.log(logg.substr(6, 5));
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {
+    },
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-const num = 12.2;
-console.log(Math.round(num));
+function rememberMyFilms() {
+    for (let i = 0; i <= 1; i++) {
+        const a = prompt("Фільми які ви подивились ?", ""),
+            b = +prompt("Оцінка фільму ?", "");
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+            personalMovieDB.movies[a] = b;
+        } else {
+            i--;
+        }
+    }
+}
 
-const test = '12.2px';
-// console.log(parseInt(test));
-console.log(parseFloat(test));
+rememberMyFilms();
+
+function detectLevel() {
+    if (personalMovieDB.count <  10) {
+        alert("Проглянуто доволі мало фільмів :(");
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+        alert("Ви класичний глядач :)");
+    } else if (personalMovieDB.count >= 30) {
+        alert("Ви кіноман :)");
+    } else {
+        alert("Виникла помилка");
+    }
+}
+
+detectLevel();
+
+function showMyDB(hiden) {
+    if(!hiden) {
+        console.log(personalMovieDB);  
+    } else {
+        console.log("Ви не маєте прав для перегляду бази даних");
+    }
+}
+
+showMyDB(personalMovieDB.privat);
+
+function writeYourGenres() {
+    for(let i = 1; i <=3; i++) {
+        personalMovieDB.genres[i - 1] = prompt(`Ваш уоюблений жанр під номером ${i}`);
+    }
+}
+
+writeYourGenres();
