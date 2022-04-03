@@ -1,31 +1,88 @@
 'use strict';
 
-const arr = [1, 9, 13, 2, 7];
-arr.sort(compareNum);
-console.log(arr);
+let a = 5,
+    b = a;
 
-function compareNum(a, b) {
-    return a - b;
+b = b + 5;
+
+console.log(b);
+console.log(a);
+
+const obj = {
+    a: 5,
+    b: 1
+};
+
+// const copy = obj;
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+function copy(mainObj) {
+    let objCopy = {};
+
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+
+    return objCopy;
 }
 
-// arr.forEach(function (item, i, arr) {
-//     console.log(`${i}: ${item} всредині маисву ${arr}`);
-// });
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 10
+    }
+};
 
-// arr.pop();
-// arr.push(12);
+const newNumbers = copy(numbers);
 
-// console.log(arr);
+newNumbers.a = 10;
+newNumbers.c.x = 10;
 
-// for (let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
-// }
+// console.log(newNumbers);
+// console.log(numbers);
 
-// for (let value of arr) {
-//     console.log(value);
-// }
+const add = {
+    d: 23,
+    e: 45
+};
 
-// const str = prompt('', '');
-// const products = str.split(', ');
-// products.sort();
-// console.log(products.join('; '));
+const clone = Object.assign({}, add);
+
+clone.d = 20;
+
+// console.log(add);
+// console.log(clone);
+
+// const oldArray = ['a', 'd', 'f'];
+// const newArray = oldArray.slice();
+
+// newArray[1] = 'sdgsgs';
+// console.log(oldArray);
+// console.log(newArray);
+
+const video = ['youtube', 'video', 'udemy'],
+    blogs = ['gsgfsgrs', 'fefaefsx', 'edsgsdg'],
+    internet = [...video, ...blogs, 'wegfsg', 'efgsgsw'];
+
+console.log(internet);
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const num = [2, 5, 7];
+
+log(...num);
+
+const array = ['a', 'b'];
+
+const newArray = [...array];
