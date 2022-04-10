@@ -1,17 +1,23 @@
 'use strict';
 
-console.log(typeof(null));
+const box = document.getElementById('box');
 
-const num = 5;
+console.log(box);
 
-console.log(`aeaegsegg/${num}`);
+const btns = document.getElementsByTagName('button');
 
-const fontSize = 26 + 'px';
+console.log(btns[1]);
 
-//To number
+const circles = document.getElementsByClassName('circle');
 
-// 1)
+console.log(circles);
 
-console.log(typeof(Number('4')));
+const hearts = document.querySelectorAll('.heart');
 
-// 2)
+hearts.forEach(item => {
+    console.log(item);
+});
+
+const oneHeart = document.querySelector('.heart');
+
+console.log(oneHeart);
