@@ -1,29 +1,18 @@
-const btn = document.querySelectorAll('button'),
-    overlay = document.querySelector('.overlay');
+// console.log(document.head);
+// console.log(document.body.childNodes);
+// console.log(document.body.firstElementChild);
+// console.log(document.body.lastElementChild);
 
-// btn.onclick = function() {
-//     alert('rge');
-// };
+// console.log(document.querySelector('#current').parentNode);
 
-// btn.onclick = function() {
-//     alert('rfsde');
-// };
+// console.log(document.querySelector('#current').parentElement);
 
-let i = 0;
-const deleteElement = (e) => {
-    console.log(e.currentTarget);
-    console.log(e.type);
-};
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling);
 
-// btn.addEventListener('click', deleteElement);
-// overlay.addEventListener('click', deleteElement);
+for(let node of document.body.childNodes) {
+    if(node.nodeName == '#text') {
+        continue;
+    }
 
-btn.forEach(item => {
-    item.addEventListener('click', deleteElement, {once: true});
-});
-
-const link = document.querySelector('a');
-
-link.addEventListener('click', (e) => {
-    e.preventDefault();
-});
+    console.log(node);
+}
