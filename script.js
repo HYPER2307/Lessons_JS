@@ -1,22 +1,18 @@
-// touchstart
-// touchmove 
-// touchend
-// touchenter
-// touchleave
-// touchcancel
+"use strict";
+
+const p = document.querySelectorAll('p');
+
+console.log(p);
 
 
-window.addEventListener('DOMContentLoaded', () => {
-    const box = document.querySelector('.box');
 
-    box.addEventListener('touchend', (e) => {
-        e.preventDefault();
 
-        console.log('End');
-        console.log(e.targetTouches);
-    });
-});
+function loadScript(src) {
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = false;
+    document.body.append(script);
+}
 
-// touches
-// targetTouches
-// changedTouches
+loadScript('test.js');
+loadScript('some.js');
