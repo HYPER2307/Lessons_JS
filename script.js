@@ -1,18 +1,22 @@
-// console.log(document.head);
-// console.log(document.body.childNodes);
-// console.log(document.body.firstElementChild);
-// console.log(document.body.lastElementChild);
+// touchstart
+// touchmove 
+// touchend
+// touchenter
+// touchleave
+// touchcancel
 
-// console.log(document.querySelector('#current').parentNode);
 
-// console.log(document.querySelector('#current').parentElement);
+window.addEventListener('DOMContentLoaded', () => {
+    const box = document.querySelector('.box');
 
-// console.log(document.querySelector('[data-current="3"]').nextElementSibling);
+    box.addEventListener('touchend', (e) => {
+        e.preventDefault();
 
-for(let node of document.body.childNodes) {
-    if(node.nodeName == '#text') {
-        continue;
-    }
+        console.log('End');
+        console.log(e.targetTouches);
+    });
+});
 
-    console.log(node);
-}
+// touches
+// targetTouches
+// changedTouches
